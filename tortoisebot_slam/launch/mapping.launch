@@ -33,9 +33,11 @@
     <param name="llsamplestep" value="0.01"/>
     <param name="lasamplerange" value="0.005"/>
     <param name="lasamplestep" value="0.005"/>
-
     </node>
 
+    <!-- Static transform publisher from odom to base_link -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher_odom_to_base_link" args="0 0 0 0 0 0 odom base_link" />
+  
     <!-- Start RViz with custom view -->
     <node pkg="rviz" type="rviz" name="show_rviz" args="-d $(find tortoisebot_slam)/rviz/mapping.rviz"/>'
     
